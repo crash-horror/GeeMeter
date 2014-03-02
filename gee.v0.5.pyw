@@ -91,7 +91,7 @@ def the_server():
 
 	while True:
 	    data = conn.recv(512)
-	    if len(data) == 0 or len(data) > 8:
+	    if not data:
 	    	print('Gserver SHUTDOWN!')
 	    	break
 	    globaldata = float(data)

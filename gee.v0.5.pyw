@@ -1,5 +1,5 @@
+#!/usr/bin/python3
 ## GeeMeter
-
 version = 0.5
 
 from tkinter import *
@@ -11,6 +11,7 @@ import time
 
 root = Tk()
 root.title('G-Meter ' + str(version))
+root.resizable(0,0)
 w = Canvas(root, width=200, height=1120, bg='black')
 w.pack()
 

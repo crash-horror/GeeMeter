@@ -1,5 +1,6 @@
 GeeMeter v0.5
 ===
+Currently works for FC3 aircraft only <<< to be fixed.
 
 	The "gee.v0.5.pyw" script creates a fixed 200 by 1120 window,
 	which means you need at least 1200 vertical

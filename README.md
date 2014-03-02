@@ -13,7 +13,7 @@ Currently works for FC3 aircraft only <<< to be fixed.
 
 
 Important:
-
+==========
 	For this script to work you need to add the
 	lines contained in the "ADD_THIS_TO_YOUR_Export.lua"
 	at the end of your Export.lua file located at:

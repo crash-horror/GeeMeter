@@ -1,6 +1,6 @@
 GeeMeter v0.5
 =============
-[Screenshot](http://i.imgur.com/rhcvyi0.png)
+![Screenshot](http://i.imgur.com/rhcvyi0.png)
 
 Currently works for FC3 aircraft only <<< to be fixed.
 

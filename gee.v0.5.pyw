@@ -10,7 +10,7 @@ import time
 ##-------------------TK----------------------------
 
 root = Tk()
-root.title('Gee Meter')
+root.title('G-Meter ' + str(version))
 w = Canvas(root, width=200, height=1120, bg='black')
 w.pack()
 

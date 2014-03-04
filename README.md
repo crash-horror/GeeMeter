@@ -8,7 +8,7 @@ Currently works for FC3 aircraft only <<< to be fixed.
 	which means you need at least 1200 vertical
 	screen resolution on your second monitor.
 
-	The "gee.v0.5.compact.pyw" script creates a fixed 200 by 960 window,
+	The "gee.v0.5.compact.pyw" script creates a shorter 200 by 960 window,
 	which means you need at least 1080 vertical screen resolution.
 
 

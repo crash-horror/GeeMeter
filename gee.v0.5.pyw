@@ -12,6 +12,7 @@ import time
 root = Tk()
 root.title('G-Meter ' + str(version))
 root.resizable(0,0)
+root.iconbitmap(default='favicon.ico')
 w = Canvas(root, width=200, height=1120, bg='black')
 w.pack()
 

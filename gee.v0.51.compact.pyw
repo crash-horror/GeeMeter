@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ## GeeMeter COMPACT 1000 pixels
-version = 0.5
+version = 0.51
 
 from tkinter import *
 from socket import *
@@ -42,8 +42,7 @@ w.update()
 def change_color():
 	global geelist, numlist, globaldata
 
-	gee_in = globaldata
-	gee = round(gee_in)
+	gee = round(globaldata)
 
 	if gee < -1:
 		gee = -1
@@ -69,11 +68,11 @@ def change_color():
 ##--------------------SERVER----------------------
 
 def the_server():
-	global globaldata, serverstatus, w
+	global globaldata, serverstatus
 	HOST = ''
 	PORT = 1625
 	ADDR = (HOST,PORT)
-	BUFSIZE = 512
+	BUFSIZE = 512	# is this used? I don't think so...
 
 	serv = socket(AF_INET,SOCK_STREAM)
 	serv.bind((ADDR))
@@ -119,5 +118,3 @@ t1.start()
 w.after(1, change_color)
 
 w.mainloop()
-
-

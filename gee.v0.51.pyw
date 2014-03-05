@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 ## GeeMeter for DCS:FC3
-version = 0.5.1
+version = 0.51
 
 ################################################
 # This monstrosity was created by crash_horror
 # and comes without warranty of any kind,
-# read the licence.		
+# read the licence.
 # (https://github.com/crash-horror)
 ################################################
 
@@ -49,8 +49,7 @@ w.update()
 def change_color():
 	global geelist, numlist, globaldata
 
-	gee_in = globaldata
-	gee = round(gee_in)
+	gee = round(globaldata)
 
 	if gee < -1:
 		gee = -1
@@ -76,11 +75,11 @@ def change_color():
 ##--------------------SERVER----------------------
 
 def the_server():
-	global globaldata, serverstatus, w
+	global globaldata, serverstatus
 	HOST = ''
 	PORT = 1625
 	ADDR = (HOST,PORT)
-	BUFSIZE = 512
+	BUFSIZE = 512	# is this used? I don't think so...
 
 	serv = socket(AF_INET,SOCK_STREAM)
 	serv.bind((ADDR))
@@ -126,6 +125,3 @@ t1.start()
 w.after(1, change_color)
 
 w.mainloop()
-
-
-

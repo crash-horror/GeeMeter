@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ## GeeMeter for DCS:FC3
-version = 0.51
+version = 0.52
 
 ################################################
 # This monstrosity was created by crash_horror
@@ -103,6 +103,8 @@ def the_server():
 	    	print('Gserver SHUTDOWN!')
 	    	break
 	    globaldata = float(data)
+
+	    print(globaldata)  #  <<<==================================================================
 
 	conn.close()
 	serv.close()

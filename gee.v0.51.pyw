@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-## GeeMeter
+## GeeMeter for DCS:FC3
 version = 0.5.1
 
 ################################################
-# This monstrocity was created by crash_horror #
-# and comes without warranty of any kind,	   #
-# read the licence. 						   #		
-# (https://github.com/crash-horror)			   #
+# This monstrosity was created by crash_horror
+# and comes without warranty of any kind,
+# read the licence.		
+# (https://github.com/crash-horror)
 ################################################
 
 from tkinter import *

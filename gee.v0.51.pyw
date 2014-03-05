@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 ## GeeMeter
-version = 0.5
+version = 0.5.1
+
+################################################
+# This monstrocity was created by crash_horror #
+# and comes without warranty of any kind,	   #
+# read the licence. 						   #		
+# (https://github.com/crash-horror)			   #
+################################################
 
 from tkinter import *
 from socket import *

@@ -14,11 +14,11 @@ end
 aircraft = LoGetObjectById(LoGetPlayerPlaneId())
 MainPanel = GetDevice(0)
 
--- Accelerometer_main				= CreateGauge()
--- Accelerometer_main.arg_number	= 15
--- Accelerometer_main.input		= {-5.0, 10.0}
--- Accelerometer_main.output		= {0.0, 1.0}
--- Accelerometer_main.controller	= controllers.Accelerometer_main
+-- Accelerometer_main = CreateGauge()
+-- Accelerometer_main.arg_number = 15
+-- Accelerometer_main.input = {-5.0, 10.0}
+-- Accelerometer_main.output = {0.0, 1.0}
+-- Accelerometer_main.controller = controllers.Accelerometer_main
 
 if (aircraft.Name == "A-10C") then
 		function LuaExportAfterNextFrame()

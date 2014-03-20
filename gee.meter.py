@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-## GeeMeter for DCS:FC3-A10C
+## GeeMeter for DCS:FC3 + A10C
 version = 0.53
 
 ################################################
@@ -13,7 +13,7 @@ from tkinter import *
 from socket import *
 from threading import *
 from sys import platform
-from time import sleep
+import time
 
 ##-------------------TK----------------------------
 
@@ -30,10 +30,6 @@ w.pack()
 globaldata = 0.0
 
 serverstatus = 'DOWN'
-
-geelist =   ['nine', 'eight', 'seven',  'six',    'five',   'four',   'three', 'two',   'one', 'zero',  'minus']
-colorlist = ['red',  'red',   'orange', 'orange', 'yellow', 'yellow', 'green', 'green', 'blue', 'blue', 'red']
-numlist = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1]
 
 valuelist = [(9, 'nine', 'red'),
              (8, 'eight', 'red'),
@@ -93,7 +89,7 @@ def the_server():
     HOST = ''
     PORT = 1625
     ADDR = (HOST, PORT)
-    BUFSIZE = 512   # is this used? I don't think so...
+    # BUFSIZE = 512   # is this used? I don't think so...
 
     serv = socket(AF_INET, SOCK_STREAM)
     serv.bind((ADDR))

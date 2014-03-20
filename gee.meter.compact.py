@@ -1,12 +1,19 @@
 #!/usr/bin/python3
-## GeeMeter COMPACT 1000 pixels for DCS:FC3-A10C
+## GeeMeter COMPACT (1000 vertical pixels) for DCS:FC3 + A10C
 version = 0.52
+
+################################################
+# This monstrosity was created by crash_horror
+# and comes without warranty of any kind,
+# read the licence.
+# (https://github.com/crash-horror)
+################################################
 
 from tkinter import *
 from socket import *
 from threading import *
 from sys import platform
-from time import sleep
+import time
 
 ##-------------------TK----------------------------
 
@@ -23,11 +30,6 @@ w.pack()
 globaldata = 0.0
 
 serverstatus = 'DOWN'
-
-
-geelist =   ['nine', 'eight', 'seven',  'six',    'five',   'four',   'three', 'two',   'one', 'zero',  'minus']
-colorlist = ['red',  'red',   'orange', 'orange', 'yellow', 'yellow', 'green', 'green', 'blue', 'blue', 'red']
-numlist = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1]
 
 valuelist = [(9, 'nine', 'red'),
              (8, 'eight', 'red'),
@@ -47,8 +49,8 @@ textposit = 0
 for i, j, k, in valuelist:
     w.create_rectangle(20, 10+posit, 180, 80+posit, fill="grey10", tags=j)
     w.create_text(100, 45+textposit, text=i, font=('Arial', 40))
-    posit += 100
-    textposit += 100
+    posit += 85
+    textposit += 85
 
 w.create_text(100, 950, text=serverstatus, font=('Arial'), fill=('grey40'), tags='statusbar')
 w.update()
@@ -87,7 +89,7 @@ def the_server():
     HOST = ''
     PORT = 1625
     ADDR = (HOST, PORT)
-    BUFSIZE = 512   # is this used? I don't think so...
+    # BUFSIZE = 512   # is this used? I don't think so...
 
     serv = socket(AF_INET, SOCK_STREAM)
     serv.bind((ADDR))

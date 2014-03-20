@@ -1,47 +1,69 @@
 #!/usr/bin/python3
-## GeeMeter COMPACT 1000 pixels for DCS:FC3-A10C
-version = 0.51
+## GeeMeter for DCS:FC3-A10C
+version = 0.53
+
+################################################
+# This monstrosity was created by crash_horror
+# and comes without warranty of any kind,
+# read the licence.
+# (https://github.com/crash-horror)
+################################################
 
 from tkinter import *
 from socket import *
 from threading import *
-import time
+from sys import platform
+from time import sleep
 
 ##-------------------TK----------------------------
 
 root = Tk()
 root.title('G-Meter ' + str(version))
 root.resizable(0, 0)
-root.iconbitmap(default='favicon.ico')
-w = Canvas(root, width=200, height=960, bg='black')
+
+if sys.platform == 'win32':
+    root.iconbitmap(default='favicon.ico')
+
+w = Canvas(root, width=200, height=1120, bg='black')
 w.pack()
 
 globaldata = 0.0
 
 serverstatus = 'DOWN'
 
-posit = 0
-textposit = 0
 geelist =   ['nine', 'eight', 'seven',  'six',    'five',   'four',   'three', 'two',   'one', 'zero',  'minus']
 colorlist = ['red',  'red',   'orange', 'orange', 'yellow', 'yellow', 'green', 'green', 'blue', 'blue', 'red']
 numlist = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1]
 
-for i in geelist:
-    w.create_rectangle(20, 10+posit, 180, 80+posit, fill="grey10", tags=i)
-    posit += 85
+valuelist = [(9, 'nine', 'red'),
+             (8, 'eight', 'red'),
+             (7, 'seven', 'orange'),
+             (6, 'six', 'orange'),
+             (5, 'five', 'yellow'),
+             (4, 'four', 'yellow'),
+             (3, 'three', 'green'),
+             (2, 'two', 'green'),
+             (1, 'one', 'blue'),
+             (0, 'zero', 'blue'),
+             (-1, 'minus', 'red')]
 
-for i in numlist:
+posit = 0
+textposit = 0
+
+for i, j, k, in valuelist:
+    w.create_rectangle(20, 10+posit, 180, 80+posit, fill="grey10", tags=j)
     w.create_text(100, 45+textposit, text=i, font=('Arial', 40))
-    textposit += 85
+    posit += 100
+    textposit += 100
 
-w.create_text(100, 950, text=serverstatus, font=('Arial'), fill=('grey40'), tags='statusbar')
+w.create_text(100, 1110, text=serverstatus, font=('Arial'), fill=('grey40'), tags='statusbar')
 w.update()
 
 ##--------------------MAIN LOOP----------------------
 
 
 def change_color():
-    global geelist, numlist, globaldata
+    global globaldata, valuelist
 
     gee = round(globaldata)
 
@@ -50,18 +72,15 @@ def change_color():
     elif gee > 9:
         gee = 9
 
-    onlightlist = geelist[numlist.index(gee):]
-
-    for on in onlightlist:
-        w.itemconfig(on, fill=colorlist[geelist.index(on)])
-
-    if gee > -1:
-        offlightlist = geelist[:numlist.index(gee)] + ['minus']
-    else:
-        offlightlist = geelist[:numlist.index(gee)]
-
-    for off in offlightlist:
-        w.itemconfig(off, fill='grey10')
+    for i, j, k in valuelist:
+        # on lights:
+        if i <= gee:
+            w.itemconfig(j, fill=k)
+            if gee > -1:
+                w.itemconfig('minus', fill='grey10')
+        # off lights:
+        else:
+            w.itemconfig(j, fill='grey10')
 
     w.update()
     w.after(10, change_color)
@@ -83,21 +102,23 @@ def the_server():
     serverstatus = 'LISTENING'
     w.itemconfig('statusbar', text=serverstatus)
     w.update()
-    print('Listening...')
+    print('Listening...')  # debug fossil
 
     conn, addr = serv.accept()
 
     serverstatus = 'CONNECTED'
     w.itemconfig('statusbar', text=serverstatus)
     w.update()
-    print('...connected!')
+    print('...connected!')  # debug fossil
 
     while True:
         data = conn.recv(512)
         if not data:
-            print('Gserver SHUTDOWN!')
+            print('Gserver SHUTDOWN!')  # debug fossil
             break
         globaldata = float(data)
+
+        print(globaldata)  #  <<<========debug fossil==============================================
 
     conn.close()
     serv.close()
@@ -106,7 +127,7 @@ def the_server():
     w.itemconfig('statusbar', text=serverstatus)
     globaldata = 0.0
     w.update()
-    print('Restarting...')
+    print('Restarting...')  # debug fossil
 
     time.sleep(5)
     the_server()

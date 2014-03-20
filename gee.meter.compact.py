@@ -44,13 +44,11 @@ valuelist = [(9, 'nine', 'red'),
              (-1, 'minus', 'red')]
 
 posit = 0
-textposit = 0
 
 for i, j, k, in valuelist:
     w.create_rectangle(20, 10+posit, 180, 80+posit, fill="grey10", tags=j)
-    w.create_text(100, 45+textposit, text=i, font=('Arial', 40))
+    w.create_text(100, 45+posit, text=i, font=('Arial', 40))
     posit += 85
-    textposit += 85
 
 w.create_text(100, 950, text=serverstatus, font=('Arial'), fill=('grey40'), tags='statusbar')
 w.update()

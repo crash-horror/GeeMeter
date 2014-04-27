@@ -39,3 +39,7 @@ Troubleshoot:
 	Open windows task manager and kill the process
 	'pythonw.exe'.
 	The reason is that the server may not have terminated properly.
+
+Buy me a beer:
+
+	Bitcoin: 15Ty4oCTxSxC9jwx7ViosdhFcetKbqChoM

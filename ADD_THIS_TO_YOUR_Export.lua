@@ -24,10 +24,6 @@ if (aircraft.Name == "A-10C") then
 		function LuaExportAfterNextFrame()
 			local Gee = MainPanel:get_argument_value(15) * 15 - 5
 
-				if Gee > 20 or Gee < 20 then
-					Gee = 0
-				end
-
 			socket.try(c:send(string.format("%.2f",Gee)))
 		end
 	else

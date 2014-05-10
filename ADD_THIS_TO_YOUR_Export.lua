@@ -11,28 +11,10 @@ function LuaExportStart()
 	c:setoption("tcp-nodelay",true)
 end
 ------------------------------------------------
-aircraft = LoGetObjectById(LoGetPlayerPlaneId())
-MainPanel = GetDevice(0)
-
--- Accelerometer_main = CreateGauge()
--- Accelerometer_main.arg_number = 15
--- Accelerometer_main.input = {-5.0, 10.0}
--- Accelerometer_main.output = {0.0, 1.0}
--- Accelerometer_main.controller = controllers.Accelerometer_main
-
-if (aircraft.Name == "A-10C") then
-		function LuaExportAfterNextFrame()
-			local Gee = MainPanel:get_argument_value(15) * 15 - 5
-
-			socket.try(c:send(string.format("%.2f",Gee)))
-		end
-	else
-		function LuaExportAfterNextFrame()
-			local Gee = LoGetAccelerationUnits()
-			socket.try(c:send(string.format("%.2f",Gee.y)))
-		end
-	end
-
+function LuaExportAfterNextFrame()
+	local Gee = LoGetAccelerationUnits()
+	socket.try(c:send(string.format("%+.2f",Gee.y)))
+end
 ------------------------------------------------
 function LuaExportStop()
 	c:close()

@@ -2,7 +2,7 @@ GeeMeter v0.5
 =============
 ![Screenshot](http://i.imgur.com/rhcvyi0.png)
 
-Currently works for FC3 aircraft only <<< to be fixed.
+Currently tested to work with FC3 aircraft and A-10C.
 
 	The "gee.v0.5.pyw" script creates a fixed 200 by 1120 window,
 	which means you need at least 1200 vertical

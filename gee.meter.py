@@ -24,7 +24,7 @@ root.resizable(0, 0)
 if sys.platform == 'win32':
     root.iconbitmap(default='favicon.ico')
 
-w = Canvas(root, width=200, height=1120, bg='black')
+w = Canvas(root, width=200, height=1120, bg='black', highlightthickness=0)
 w.pack()
 
 globaldata = 0.0

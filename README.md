@@ -44,6 +44,6 @@ Buy me a beer:
 
 	Bitcoin: 1986UJtxePd1Q8k4wAAyWDwuhcFZQzCPPS
 	
-	[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=vasskazis%40gmail%2ecom&lc=GR&item_name=crash%2dhorror&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
+	![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)
 
 

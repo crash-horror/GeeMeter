@@ -42,8 +42,8 @@ Troubleshoot:
 
 Buy me a beer:
 
-	Bitcoin: 1986UJtxePd1Q8k4wAAyWDwuhcFZQzCPPS
+Bitcoin: 1986UJtxePd1Q8k4wAAyWDwuhcFZQzCPPS
 	
-	![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)
+![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)
 
 
